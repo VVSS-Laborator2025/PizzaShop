@@ -18,7 +18,6 @@ public class PaymentRepository {
     }
 
     private void readPayments(){
-        //ClassLoader classLoader = PaymentRepository.class.getClassLoader();
         File file = new File(filename);
         BufferedReader br = null;
         try {
