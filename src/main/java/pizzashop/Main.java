@@ -14,7 +14,8 @@ import pizzashop.gui.KitchenGUI;
 import pizzashop.model.PaymentType;
 import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
-import pizzashop.service.PizzaService;
+import pizzashop.service.MenuService;
+import pizzashop.service.PaymentService;
 
 import java.util.Optional;
 
@@ -25,13 +26,14 @@ public class Main extends Application {
 
         MenuRepository repoMenu=new MenuRepository();
         PaymentRepository payRepo= new PaymentRepository();
-        PizzaService service = new PizzaService(repoMenu, payRepo);
+        MenuService menuService = new MenuService(repoMenu);
+        PaymentService paymentService = new PaymentService(payRepo);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/mainFXML.fxml"));
         //VBox box = loader.load();
         Parent box = loader.load();
         MainGUIController ctrl = loader.getController();
-        ctrl.setService(service);
+        ctrl.setService(paymentService, menuService);
         primaryStage.setTitle("PizzeriaX");
         primaryStage.setResizable(false);
         primaryStage.setAlwaysOnTop(false);
@@ -42,8 +44,8 @@ public class Main extends Application {
                 Optional<ButtonType> result = exitAlert.showAndWait();
                 if (result.get() == ButtonType.YES){
                     //Stage stage = (Stage) this.getScene().getWindow();
-                    System.out.println("Incasari cash: "+service.getTotalAmount(PaymentType.Cash));
-                    System.out.println("Incasari card: "+service.getTotalAmount(PaymentType.Card));
+                    System.out.println("Incasari cash: "+paymentService.getTotalAmount(PaymentType.Cash));
+                    System.out.println("Incasari card: "+paymentService.getTotalAmount(PaymentType.Card));
 
                     primaryStage.close();
                 }
@@ -61,7 +63,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(box));
         primaryStage.show();
         KitchenGUI kitchenGUI = new KitchenGUI();
-        kitchenGUI.KitchenGUI();
+        kitchenGUI.initialize();
     }
 
     public static void main(String[] args) { launch(args);

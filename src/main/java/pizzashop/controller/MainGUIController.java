@@ -2,24 +2,16 @@ package pizzashop.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import  javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
-import javafx.scene.text.FontWeight;
 import pizzashop.gui.OrdersGUI;
-import pizzashop.service.PizzaService;
-
-import static javafx.scene.paint.Color.DARKBLUE;
+import pizzashop.service.MenuService;
+import pizzashop.service.PaymentService;
 
 public class MainGUIController  {
     @FXML
@@ -50,47 +42,49 @@ public class MainGUIController  {
     OrdersGUI  table7Orders = new OrdersGUI();
     OrdersGUI  table8Orders = new OrdersGUI();
 
-    PizzaService service;
+    PaymentService paymentService;
+    MenuService menuService;
 
     public MainGUIController(){}
 
-    public void setService(PizzaService service){
-        this.service=service;
+    public void setService(PaymentService service, MenuService menuService){
+        this.paymentService=service;
+        this.menuService = menuService;
         tableHandlers();
     }
 
     private void tableHandlers(){
         table1.setOnAction(event -> {
             table1Orders.setTableNumber(1);
-            table1Orders.displayOrdersForm(service);
+            table1Orders.displayOrdersForm(paymentService, menuService);
         });
         table2.setOnAction(event -> {
             table2Orders.setTableNumber(2);
-            table2Orders.displayOrdersForm(service);
+            table2Orders.displayOrdersForm(paymentService, menuService);
         });
         table3.setOnAction(event -> {
             table3Orders.setTableNumber(3);
-            table3Orders.displayOrdersForm(service);
+            table3Orders.displayOrdersForm(paymentService, menuService);
         });
         table4.setOnAction(event -> {
             table4Orders.setTableNumber(4);
-            table4Orders.displayOrdersForm(service);
+            table4Orders.displayOrdersForm(paymentService, menuService);
         });
         table5.setOnAction(event -> {
             table5Orders.setTableNumber(5);
-            table5Orders.displayOrdersForm(service);
+            table5Orders.displayOrdersForm(paymentService, menuService);
         });
         table6.setOnAction(event -> {
             table6Orders.setTableNumber(6);
-            table6Orders.displayOrdersForm(service);
+            table6Orders.displayOrdersForm(paymentService, menuService);
         });
         table7.setOnAction(event -> {
             table7Orders.setTableNumber(7);
-            table7Orders.displayOrdersForm(service);
+            table7Orders.displayOrdersForm(paymentService, menuService);
         });
         table8.setOnAction(event -> {
             table8Orders.setTableNumber(8);
-            table8Orders.displayOrdersForm(service);
+            table8Orders.displayOrdersForm(paymentService, menuService);
         });
 
     }

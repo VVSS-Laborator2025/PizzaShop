@@ -12,12 +12,13 @@ public class MenuRepository {
     private List<MenuDataModel> listMenu;
 
     public MenuRepository(){
+        readMenu();
     }
 
     private void readMenu(){
         //ClassLoader classLoader = MenuRepository.class.getClassLoader();
         File file = new File(filename);
-        this.listMenu= new ArrayList();
+        this.listMenu= new ArrayList<>();
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(file));
@@ -45,7 +46,7 @@ public class MenuRepository {
     }
 
     public List<MenuDataModel> getMenu(){
-        readMenu();//create a new menu for each table, on request
+        //readMenu();//create a new menu for each table, on request
         return listMenu;
     }
 }

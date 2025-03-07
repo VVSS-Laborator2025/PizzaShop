@@ -1,4 +1,4 @@
-package pizzashop.service;
+package pizzashop.gui;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -7,16 +7,17 @@ import pizzashop.model.PaymentType;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pizzashop.service.PaymentService;
 
 
 public class PaymentAlert implements PaymentOperation {
 
     private static final Logger logger = LoggerFactory.getLogger(PaymentAlert.class);
 
-    private PizzaService service;
+    private PaymentService service;
     private static final String SEPARATOR = "--------------------------";
 
-    public PaymentAlert(PizzaService service){
+    public PaymentAlert(PaymentService service){
         this.service=service;
     }
 

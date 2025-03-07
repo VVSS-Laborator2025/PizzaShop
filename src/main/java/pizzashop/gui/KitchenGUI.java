@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class KitchenGUI {
-    public void KitchenGUI() {
+    public void initialize() {
         VBox vBoxKitchen = null;
 
         try {
