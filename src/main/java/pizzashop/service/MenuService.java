@@ -11,7 +11,6 @@ public class MenuService {
 
     public MenuService(MenuRepository menuRepo){
         this.menuRepo=menuRepo;
-
     }
     public List<MenuDataModel> getMenuData(){return menuRepo.getMenu();}
 }
