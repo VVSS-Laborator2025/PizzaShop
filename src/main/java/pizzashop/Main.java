@@ -16,6 +16,7 @@ import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 import pizzashop.service.MenuService;
 import pizzashop.service.PaymentService;
+import pizzashop.validator.PaymentValidator;
 
 import java.util.Optional;
 
@@ -44,8 +45,8 @@ public class Main extends Application {
                 Optional<ButtonType> result = exitAlert.showAndWait();
                 if (result.get() == ButtonType.YES){
                     //Stage stage = (Stage) this.getScene().getWindow();
-                    System.out.println("Incasari cash: "+paymentService.getTotalAmount(PaymentType.Cash));
-                    System.out.println("Incasari card: "+paymentService.getTotalAmount(PaymentType.Card));
+                    System.out.println("Incasari cash: "+paymentService.getTotalAmount(PaymentType.CASH));
+                    System.out.println("Incasari card: "+paymentService.getTotalAmount(PaymentType.CARD));
 
                     primaryStage.close();
                 }

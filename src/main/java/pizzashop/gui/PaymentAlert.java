@@ -53,10 +53,10 @@ public class PaymentAlert implements PaymentOperation {
         Optional<ButtonType> result = paymentAlert.showAndWait();
         if (result.isPresent() && result.get() == cardPayment) {
             cardPayment();
-            service.addPayment(tableNumber, PaymentType.Card,totalAmount);
+            service.addPayment(tableNumber, PaymentType.CARD,totalAmount);
         } else if (result.isPresent() && result.get() == cashPayment) {
             cashPayment();
-            service.addPayment(tableNumber, PaymentType.Cash,totalAmount);
+            service.addPayment(tableNumber, PaymentType.CASH,totalAmount);
         } else if (result.isPresent() && result.get() == cancel) {
              cancelPayment();
         } else {
