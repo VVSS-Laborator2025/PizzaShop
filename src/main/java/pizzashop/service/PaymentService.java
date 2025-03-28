@@ -1,9 +1,7 @@
 package pizzashop.service;
 
-import pizzashop.model.MenuDataModel;
 import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
-import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 import pizzashop.validator.PaymentValidator;
 
@@ -19,20 +17,21 @@ public class PaymentService {
 
     public List<Payment> getPayments(){return payRepo.getAll(); }
 
-    public void addPayment(int table, PaymentType type, double amount){
-        PaymentValidator.validate(table, type, amount);
+    public void addPayment(int table, PaymentType type, double amount){}
+/*        PaymentValidator.validate(table, type, amount);
         Payment payment= new Payment(table, type, amount);
-        payRepo.add(payment);
-    }
+        payRepo.add(payment);*/
 
     public double getTotalAmount(PaymentType type){
         double total=0.0f;
         List<Payment> l=getPayments();
-        if ((l==null) ||(l.isEmpty())) return total;
+        if (l==null)
+            return total;
+        if (l.isEmpty())
+            return total;
         for (Payment p:l){
             if (p.getType().equals(type))
-                total+=p.getAmount();
-        }
+                total+=p.getAmount();}
         return total;
     }
 

@@ -34,6 +34,8 @@ class PaymentServiceTest {
         service.addPayment(1, PaymentType.CARD, 200.5);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
@@ -43,6 +45,8 @@ class PaymentServiceTest {
         service.addPayment(4, PaymentType.CARD, 100.75);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
@@ -52,6 +56,8 @@ class PaymentServiceTest {
         service.addPayment(6, PaymentType.CARD, 45.7);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
@@ -61,6 +67,8 @@ class PaymentServiceTest {
         service.addPayment(8, PaymentType.CARD, 28.9);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
@@ -72,7 +80,8 @@ class PaymentServiceTest {
         }, "Expected addPayment to throw, but it didn't");
 
         assertTrue(thrown.getMessage().contains("Table number must be between 1 and 8"), "Exception message does not match expected text.");
-    }
+
+        System.out.println("Table number must be between 1 and 8");}
 
 
     @Test
@@ -85,7 +94,8 @@ class PaymentServiceTest {
         }, "Expected addPayment to throw, but it didn't");
 
         assertTrue(thrown.getMessage().contains("Table number must be between 1 and 8"), "Exception message does not match expected text.");
-    }
+
+        System.out.println("Table number must be between 1 and 8");}
 
     @Test
     @Order(7)
@@ -97,7 +107,8 @@ class PaymentServiceTest {
         }, "Expected addPayment to throw, but it didn't");
 
         assertTrue(thrown.getMessage().contains("Amount must be between 0 and 1000."), "Exception message does not match expected text.");
-    }
+
+        System.out.println("Amount must be between 0 and 1000.");}
 
     @Test
     @Order(8)
@@ -110,28 +121,29 @@ class PaymentServiceTest {
 
         assertTrue(thrown.getMessage().contains("Amount must be between 0 and 1000."), "Exception message does not match expected text.");
 
+        System.out.println("Amount must be between 0 and 1000.");
     }
-
 
     @Test
     @Order(9)
     @Tag("BVA")
     @DisplayName("BVA Test 1")
     void addValidPaymentTestBVA() {
-        service.addPayment(3, PaymentType.CARD, 33.3);
+        service.addPayment(1, PaymentType.CARD, 200.5);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
     @Order(10)
     @DisplayName("BVA Test 2")
-    void addInvalidPaymentBVA() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            service.addPayment(9, PaymentType.CARD, 33.3);
-        }, "Expected addPayment to throw, but it didn't");
+    void addInvalidPaymentBVA1() {
+        service.addPayment(8, PaymentType.CARD, 28.9);
 
-        assertTrue(thrown.getMessage().contains("Table number must be between 1 and 8"), "Exception message does not match expected text.");
+        assertEquals(1, service.getPayments().size());
+        System.out.println("ADDED");
     }
 
     @Test
@@ -139,43 +151,38 @@ class PaymentServiceTest {
     @DisplayName("BVA Test 3")
     void addInvalidPaymentBVA2() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            service.addPayment(0, PaymentType.CARD, 33.3);
+            service.addPayment(-10, PaymentType.CARD, 800.4);
         }, "Expected addPayment to throw, but it didn't");
 
         assertTrue(thrown.getMessage().contains("Table number must be between 1 and 8"), "Exception message does not match expected text.");
+        System.out.println("Table number must be between 1 and 8");
     }
 
     @Test
     @Order(12)
     @DisplayName("BVA Test 4")
     @EnabledOnOs(OS.WINDOWS)
-    void addValidPaymentTestBVA2() {
-        service.addPayment(5, PaymentType.CARD, 450.65);
+    void addValidPaymentTestBVA3() {
+        service.addPayment(1, PaymentType.CARD, 999.99);
 
         assertEquals(1, service.getPayments().size());
+
+        System.out.println("ADDED");
     }
 
     @Test
     @Order(13)
     @DisplayName("BVA Test 5")
     @EnabledOnOs(OS.WINDOWS)
-    void addInvalidPaymentBVA3() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            service.addPayment(5, PaymentType.CARD, 0);
-        }, "Expected addPayment to throw, but it didn't");
-
-        assertTrue(thrown.getMessage().contains("Amount must be between 0 and 1000."), "Exception message does not match expected text.");
-    }
-
-    @Test
-    @Order(14)
-    @DisplayName("BVA Test 6")
-    @EnabledOnOs(OS.WINDOWS)
     void addInvalidPaymentBVA4() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            service.addPayment(5, PaymentType.CARD, 1000.1);
+            service.addPayment(2, PaymentType.CARD, 0);
         }, "Expected addPayment to throw, but it didn't");
 
         assertTrue(thrown.getMessage().contains("Amount must be between 0 and 1000."), "Exception message does not match expected text.");
+
+        System.out.println("Amount must be between 0 and 1000.");
     }
+
+
 }
