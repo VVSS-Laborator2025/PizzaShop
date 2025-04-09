@@ -17,14 +17,20 @@ public class PaymentService {
 
     public List<Payment> getPayments(){return payRepo.getAll(); }
 
-    public void addPayment(int table, PaymentType type, double amount){}
-/*        PaymentValidator.validate(table, type, amount);
+    public void addPayment(int table, PaymentType type, double amount){
+        PaymentValidator.validate(table, type, amount);
         Payment payment= new Payment(table, type, amount);
-        payRepo.add(payment);*/
+        payRepo.add(payment);}
+
 
     public double getTotalAmount(PaymentType type){
+
+        return getTotalAmount(getPayments(),type);
+
+    }
+
+    public double getTotalAmount(List<Payment> l, PaymentType type){
         double total=0.0f;
-        List<Payment> l=getPayments();
         if (l==null)
             return total;
         if (l.isEmpty())
