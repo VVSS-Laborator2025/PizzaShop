@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------
+Test set: pizzashop.service.PaymentServiceTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 13, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! - in pizzashop.service.PaymentServiceTest
+addValidPaymentTestBVA3  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addValidPaymentTestBVA  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPayment2  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPayment3  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPayment4  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addValidPaymentTest2  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addValidPaymentTest3  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addValidPaymentTest4  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addValidPaymentTest  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPayment  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPaymentBVA1  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPaymentBVA2  Time elapsed: 0 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+
+addInvalidPaymentBVA4  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.reflect.InaccessibleObjectException: Unable to make pizzashop.service.PaymentServiceTest() accessible: module pizzashop does not "opens pizzashop.service" to unnamed module @19bb07ed
+

@@ -1,0 +1,7 @@
+pizzashop\service\PaymentServiceTest.class
+pizzashop\service\integration\step1\PaymentTestStep1.class
+pizzashop\service\integration\step2\PaymentServiceTestStep2.class
+pizzashop\service\PaymentServiceTestGetTotalAmount.class
+pizzashop\service\integration\step3\PaymentServiceTestStep3.class
+pizzashop\service\integration\step1\PaymentRepositoryTestStep1.class
+pizzashop\service\integration\step1\PaymentServiceTestStep1.class
