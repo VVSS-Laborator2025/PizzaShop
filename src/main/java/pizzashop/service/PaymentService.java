@@ -24,9 +24,7 @@ public class PaymentService {
 
 
     public double getTotalAmount(PaymentType type){
-
         return getTotalAmount(getPayments(),type);
-
     }
 
     public double getTotalAmount(List<Payment> l, PaymentType type){
@@ -38,7 +36,6 @@ public class PaymentService {
         for (Payment p:l){
             if (p.getType().equals(type))
                 total+=p.getAmount();}
-        return total;
-    }
+        return total;}
 
 }

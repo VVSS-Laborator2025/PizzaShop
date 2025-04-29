@@ -38,4 +38,14 @@ public class Payment {
     public String toString() {
         return tableNumber + ","+type +"," + amount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Payment)) return false;
+        Payment payment = (Payment) o;
+        return tableNumber == payment.tableNumber &&
+                Double.compare(payment.amount, amount) == 0 &&
+                type == payment.type;
+    }
 }
